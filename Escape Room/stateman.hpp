@@ -23,4 +23,5 @@ namespace Engine {
 		void ProcessStateChange();
 		std::unique_ptr<state>& GetCurrent();
 	};
+	void Add(std::unique_ptr<Engine::state> toAdd, bool replace);
 }
