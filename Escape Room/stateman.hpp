@@ -1,7 +1,7 @@
 #pragma once
 #include<stack>
 #include<memory>
-#include<C:\Users\asing\Documents\Escape Room\Escape Room\state.hpp>
+#include "state.hpp"
 
 namespace Engine {
 	class StateMan
@@ -11,7 +11,7 @@ namespace Engine {
 		std::unique_ptr<state> m_newState;
 
 		bool m_add;
-		bool m_repalce;
+		bool m_replace;
 		bool m_remove;
 
 	public:
@@ -23,5 +23,5 @@ namespace Engine {
 		void ProcessStateChange();
 		std::unique_ptr<state>& GetCurrent();
 	};
-	void Add(std::unique_ptr<Engine::state> toAdd, bool replace);
+	
 }

@@ -21,12 +21,24 @@
     <ClCompile Include="stateman.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="assetman.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="game.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="state.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="stateman.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="assetman.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="game.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

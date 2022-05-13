@@ -139,10 +139,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="assetman.cpp" />
+    <ClCompile Include="game.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="stateman.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="assetman.hpp" />
+    <ClInclude Include="game.hpp" />
     <ClInclude Include="state.hpp" />
     <ClInclude Include="stateman.hpp" />
   </ItemGroup>
