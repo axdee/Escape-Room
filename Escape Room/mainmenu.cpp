@@ -148,4 +148,6 @@ void mainmenu::Update(sf::Time deltatime)
 }
 
 void mainmenu::Draw()
-{}
+{
+	render(*m_context->m_window, boxes);
+}
