@@ -12,7 +12,7 @@
 class mainmenu: public Engine::state
 {
 private:
-	
+	sf::Font font;
 	std::shared_ptr<Context>m_context;
 	sf::Text m_gameTitle;
 
