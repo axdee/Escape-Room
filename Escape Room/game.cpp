@@ -1,5 +1,9 @@
 #include "game.hpp"
+#include "mainmenu.hpp"
+
 #include<SFML/Graphics.hpp>
+
+#include <memory>
 
 
 
@@ -9,7 +13,7 @@ game::game(): m_context(std::make_shared<Context>())
 	//TODO;
 	//Add first state to m_states
 
-
+	m_context->m_states->Add(std::make_unique<mainmenu>(m_context));
 }
 
 game::~game()
@@ -33,10 +37,10 @@ void game::Run()
 			timesincelastframe -= TIME_PER_FRAME;
 
 			//TODO;
-			//m_context->m_states->ProcessStateChange();
-			//m_context->m_states->GetCurrent()->ProcessInput();
-			//m_context->m_states->GetCurrent()->Update(TIME_PER_FRAME);
-			//m_context->m_states->GetCurrent()->render();
+			m_context->m_states->ProcessStateChange();
+			m_context->m_states->GetCurrent()->ProcessInput();
+			m_context->m_states->GetCurrent()->Update(TIME_PER_FRAME);
+			m_context->m_states->GetCurrent()->Draw();
 
 			//}
 
