@@ -11,7 +11,6 @@ b2World world(b2Vec2(0, -9));
 mainmenu::mainmenu(std::shared_ptr<Context>& context)
 	:m_context(context)
 {
-	font.loadFromFile("shortbaby.ttf");
 }
 
 mainmenu::~mainmenu()
@@ -96,9 +95,9 @@ void mainmenu::render(sf::RenderWindow& w, std::vector<Box>& boxes)
 
 void mainmenu::Init()
 {
+	font.loadFromFile("shortbaby.ttf");
+
 	boxes.push_back(createGround(300, 20, 1000, 100, sf::Color::Magenta));
-
-
 	
 	for (int i = 0; i < 250; i++)
 	{
