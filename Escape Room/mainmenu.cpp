@@ -8,14 +8,6 @@
 // Box2D world for physics simulation, gravity = 9 m/s^2
 b2World world(b2Vec2(0, -9));
 
-const struct Box
-{
-	float width;
-	float height;
-	sf::Color color;
-	b2Body* body;
-};
-
 mainmenu::mainmenu(std::shared_ptr<Context>& context)
 	:m_context(context)
 {
@@ -25,7 +17,7 @@ mainmenu::~mainmenu()
 {
 }
 
-int mainmenu::createBox(float x, float y, float width, float height, float density, float friction, sf::Color color)
+Box mainmenu::createBox(float x, float y, float width, float height, float density, float friction, sf::Color color)
 {
 	b2BodyDef boxBodyDef;
 	boxBodyDef.position.Set(x / PPM, y / PPM);
@@ -48,7 +40,7 @@ int mainmenu::createBox(float x, float y, float width, float height, float densi
 	return Box{ width, height, color, boxBody };
 }
 
-int mainmenu::createGround(float x, float y, float width, float height, sf::Color color)
+Box mainmenu::createGround(float x, float y, float width, float height, sf::Color color)
 {
 	b2BodyDef groundBodyDef;
 	groundBodyDef.position.Set(x / PPM, y / PPM);
@@ -113,7 +105,8 @@ void mainmenu::Init()
 	for (int i = 0; i < 250; i++)
 	{
 		
-		auto&& box = createBox(150 + (std::rand() % (550 - 50 + 1)), 70 + (std::rand() % (550 - 70 + 1)), 15, 15, 1.f, 0.4f, sf::Color::Red);
+		auto box = createBox(static_cast<float>(150 + (std::rand() % (550 - 50 + 1))),
+												 static_cast<float>(70 + (std::rand() % (550 - 70 + 1))), 15, 15, 1.f, 0.4f, sf::Color::Red);
 		boxes.push_back(box);
 	}
 }
@@ -126,8 +119,8 @@ void mainmenu::ProcessInput()
 	if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
 	{
 
-		float localPositionx = sf::Mouse::getPosition().x;
-		float localPositiony = sf::Mouse::getPosition().y;
+		float localPositionx = static_cast<float>(sf::Mouse::getPosition().x);
+		float localPositiony = static_cast<float>(sf::Mouse::getPosition().y);
 
 		auto&& box = createBox(localPositionx, WINDOW_HEIGHT - localPositiony, 15.f, 15.f, 1.f, 0.7f, sf::Color::Red);
 		boxes.push_back(box);
@@ -153,3 +146,6 @@ void mainmenu::Update(sf::Time deltatime)
 {
 
 }
+
+void mainmenu::Draw()
+{}

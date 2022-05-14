@@ -38,7 +38,7 @@ void game::Run()
 			//m_context->m_states->GetCurrent()->Update(TIME_PER_FRAME);
 			//m_context->m_states->GetCurrent()->render();
 
-			}
+			//}
 
 		}
 

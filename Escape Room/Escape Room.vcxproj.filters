@@ -50,5 +50,8 @@
     <ClInclude Include="asset.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="box.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
