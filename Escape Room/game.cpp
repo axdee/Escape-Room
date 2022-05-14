@@ -36,18 +36,10 @@ void game::Run()
 			//m_context->m_states->ProcessStateChange();
 			//m_context->m_states->GetCurrent()->ProcessInput();
 			//m_context->m_states->GetCurrent()->Update(TIME_PER_FRAME);
-			//m_context->m_states->GetCurrent()->Draw();
+			//m_context->m_states->GetCurrent()->render();
 
-			sf::Event evnt;
-			while (m_context->m_window->pollEvent(evnt))
-			{
-				if (evnt.type == sf::Event::Closed) {
-					m_context->m_window->close();
-				}
 			}
-			m_context->m_window->clear();
-			m_context->m_window->draw(shape);
-			m_context->m_window->display();
+
 		}
 
 		

@@ -142,11 +142,14 @@
     <ClCompile Include="assetman.cpp" />
     <ClCompile Include="game.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="mainmenu.cpp" />
     <ClCompile Include="stateman.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="assetman.hpp" />
     <ClInclude Include="game.hpp" />
+    <ClInclude Include="asset.h" />
+    <ClInclude Include="mainmenu.hpp" />
     <ClInclude Include="state.hpp" />
     <ClInclude Include="stateman.hpp" />
   </ItemGroup>
